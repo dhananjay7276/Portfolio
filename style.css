@@ -6,8 +6,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-
-
+html{
+    scroll-behavior:smooth;
+}
 /* navbar styling */
 .max-width{
     max-width: 1300px;
@@ -48,6 +49,7 @@
     display: inline-block;
 }
 .navbar .menu li a{
+    display: block;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
@@ -70,6 +72,30 @@
     cursor: pointer;
     display: none;
 }
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    background:crimson;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
 
 /* home section styling start */
 
@@ -118,7 +144,7 @@
 
 /* all comman code  */
 
-.about ,.services,.skills, .team , .contact{
+.about ,.services,.skills, .team , .contact ,footer{
     font-family: 'Poppins', sans-serif;
 }
 
@@ -457,11 +483,79 @@ section .title::after{
     color: #333;
 }
 
+.contact .right form .field{
+    display: flex;
+}
+.contact .right form .fields .name{
+    margin-right: 10px;
+}
+.contact .right form .fields .textarea textarea{
+    height: 100px;
+    resize: none;
+}
+
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact .right form .field input,
+.contact .right form .fields .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 10px;
+}
+.contact .right form .fields .contactno{
+    margin-left: 10px;
+    width: 50%;
+}
+.contact .right form .fields .button {
+    height: 47px;
+    width: 170px;
+    margin-top: 10px;
+}
+
+.contact .right form .fields .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid crimson;
+    background: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.contact .right form .fields .button button:hover{
+    background: none;
+    color: crimson;
+}
 
 
+/* footer section styling */
+ footer{
+     background: #111;
+     padding: 20px 23px;
+     color: #fff;
+ }
 
-
-
+ footer span a{
+     color: crimson;
+     text-decoration: none;
+ }
+ footer span a:hover{
+     text-decoration: underline;
+ }
 
 
 
@@ -551,7 +645,8 @@ section .title::after{
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
-    .skills .skill-content .column{
+    .skills .skill-content .column,
+    .contact .contact-content .column{
         width: 100%;
         margin-bottom: 35px;
     }

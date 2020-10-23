@@ -5,6 +5,30 @@ $(document).ready(function(){
         }else{
             $('.navbar').removeClass("sticky");
         }
+        if(this.scrollY > 300){
+            $('.scroll-up-btn').addClass("show");
+        }else{
+            $('.scroll-up-btn').removeClass("show");
+        }
+    });
+
+    // slide-up script 
+    $('.scroll-up-btn').click(function(){
+        $('html').animate({scrollTop:0})
+    });
+
+    // typing animation script 
+    var typed = new Typed(".typing",{
+        strings:["Developer", "Network Engineer","Freelancer","Mechanical Engineer"],
+        typeSpeed:100,
+        backsSpeed:60,
+        loop:true
+    });
+    var typed = new Typed(".typing-2",{
+        strings:["Developer", "Network Engineer","Freelancer","Mechanical Engineer"],
+        typeSpeed:100,
+        backsSpeed:60,
+        loop:true
     });
 
     // toggle menu navbar script
