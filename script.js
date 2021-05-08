@@ -1,3 +1,6 @@
+$('img').bind('contextmenu', function(e) {
+    return false;
+});
 $(document).ready(function(){
     $(window).scroll(function(){
         if(this.scrollY > 20){
